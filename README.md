@@ -15,7 +15,7 @@ This project demonstrates a Kafka-based order pipeline with:
 - `producer.py` - Sends Avro-encoded orders to Kafka
 - `consumer.py` - Consumes orders, retries temporary failures, updates the running average, and sends permanent failures to the DLQ
 - `dlq_consumer.py` - Reads messages from the DLQ topic for inspection
-- `docker-compose.yml` - Local Kafka + ZooKeeper stack
+- `docker-compose.yml` - Local single-node Kafka stack
 - `requirements.txt` - Python dependencies
 
 ## Message Schema
@@ -29,7 +29,7 @@ Each order message contains:
 ## Prerequisites
 
 - Python 3.10+
-- Docker Desktop or Docker Engine with Docker Compose
+- Docker Desktop or Docker Engine with Docker Compose and internet access to pull the Kafka image
 
 ## Setup
 
